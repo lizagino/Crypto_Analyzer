@@ -1,2 +1,2 @@
-# StockPortfolio_Analyzer
+# Stock_Portfolio_Analyzer
 Stock Analyzer Team Project
