@@ -5,14 +5,14 @@ import sys
 
 def load_accounts():
     """Writes account information from CSV to list."""
-    csvpath = Path('client_data.csv')
+    csvpath = Path('client_table.csv')
     accounts = []
     with open(csvpath, newline='') as csvfile:
         rows = csv.reader(csvfile)
         header = next(rows)
         for row in rows:
-            pin = int(row[0])
-            balance = float(row[1])
+            pin = int(row[3])
+            balance = float(row[4])
             account = {
                 "pin": pin,
                 "balance": balance
@@ -34,15 +34,6 @@ def validate_pin(pin):
 import sys
 # import fire
 import questionary
-
-import (
-    load_accounts,
-    validate_pin,
-)
-
-from actions.make_deposit import make_deposit
-from actions.make_withdrawal import make_withdrawal
-
 
 def login():
     """Login to the Clienet Portal using an account PIN."""
